@@ -60,22 +60,22 @@
                 type: 'Feature',
                 geometry: {
                     type: 'Point',
-                    coordinates: [-77.032, 38.913]
+                    coordinates: [174.780337, -41.279215]
                 },
                 properties: {
-                    title: 'Mapbox',
-                    description: 'Washington, D.C.'
+                    title: 'Railway Station',
+                    description: 'Wellington'
                 }
             },
             {
                 type: 'Feature',
                 geometry: {
                     type: 'Point',
-                    coordinates: [-122.414, 37.776]
+                    coordinates: [175.108015, -36.801915]
                 },
                 properties: {
-                    title: 'Mapbox',
-                    description: 'San Francisco, California'
+                    title: 'Waiheke',
+                    description: 'Waiheke Island'
                 }
             }]
         };
@@ -97,6 +97,15 @@
                 .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
                 .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
                 .addTo(map);
+        });
+
+        map.fitBounds([geojson.features[0].geometry.coordinates, geojson.features[1].geometry.coordinates], {
+            padding: {
+                top: 100,
+                bottom: 100,
+                left: 100,
+                right: 100
+            }
         });
     </script>
 </body>
